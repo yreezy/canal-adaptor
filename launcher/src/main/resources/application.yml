@@ -1,0 +1,52 @@
+server:
+  port: 8081
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+
+canal.conf:
+  mode: rabbitMQ #tcp kafka rocketMQ rabbitMQ
+  flatMessage: true
+  #  zookeeperHosts:
+  syncBatchSize: 1000
+  retries: -1
+  timeout:
+  accessKey:
+  secretKey:
+  consumerProperties:
+    # rabbitMQ consumer
+    rabbitmq.host: 192.168.1.251:5672
+    rabbitmq.virtual.host: /
+    rabbitmq.username: hupun
+    rabbitmq.password: hupun321
+    rabbitmq.resource.ownerId:
+
+  srcDataSources:
+    defaultDS:
+      url: jdbc:mysql://112.65.181.22:3306/isc_goods_1?useUnicode=true
+      username: canal
+      password: canal123
+  canalAdapters:
+    - instance: topic-queue-sync-db-de # canal instance Name or mq topic name
+      groups:
+        - groupId: g1
+          outerAdapters:
+            - name: logger
+            - name: rdb
+              key: mysql1
+              properties:
+                jdbc.driverClassName: com.mysql.jdbc.Driver
+                jdbc.url: jdbc:mysql://121.37.189.61:3306/isc_goods_1?useUnicode=true
+                jdbc.username: canal_tsdb
+                jdbc.password: canal_tsdb
+                druid.stat.enable: false
+                druid.stat.slowSqlMillis: 1000
+#      - name: es
+#        hosts: 127.0.0.1:9300 # 127.0.0.1:9200 for rest mode
+#        properties:
+#          mode: transport # or rest
+#          # security.auth: test:123456 #  only used for rest mode
+#          cluster.name: elasticsearch
+

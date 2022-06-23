@@ -1,0 +1,13 @@
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ES6xBulkRequest.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ESClientMode.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ES6xBulkResponse.class
+org\elasticsearch\client\RestHighLevelClientExt.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ES6xIndexRequest.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ES6xTemplate.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ES6xDeleteRequest.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ES6xUpdateRequest.class
+com\alibaba\otter\canal\client\adapter\es6x\ES6xAdapter.class
+com\alibaba\otter\canal\client\adapter\es6x\etl\ESEtlService.class
+org\elasticsearch\client\RequestConvertersExt.class
+com\alibaba\otter\canal\client\adapter\es6x\support\ESConnection$ESSearchRequest.class
